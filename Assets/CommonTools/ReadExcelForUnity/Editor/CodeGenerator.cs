@@ -95,6 +95,7 @@ namespace REFU
                 }
                 sw.WriteLine("}");
 
+
                 if (!string.IsNullOrEmpty(use_namespace))
                     sw.WriteLine("}");
 
