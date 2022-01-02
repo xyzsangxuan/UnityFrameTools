@@ -4,10 +4,10 @@
 ## 一、关键模块
 ### 1、单例系统
 普通单例 以及Mono单例。
-直接将SingleTon文件夹复制到新项目，使用时只需要继承泛型单例即可。大多数模块都需要单例模式，下面的模块默认都已经导入单例模块。
+直接将SingleTon文件夹复制到新项目，使用时只需要继承泛型单例即可。大多数模块都需要单例模式，下面的模块默认都已经导入单例模块。包括下面的资源管理器和Mono管理器。
 ### 2、事件系统
 一个分发消息、响应消息的系统。
-#### 消息系统一简易版
+#### 消息系统一【简易版】
 简易版更轻量级
 ##### 使用
 注册响应事件
@@ -21,10 +21,10 @@ EventCenter.GetInstance().EventTrigger<KeyCode>(EventCfg.PRESS_A_KEY, key);
 
 ```
 
-#### 消息系统二复杂版
+#### 消息系统二【复杂版】
 复杂版使用和调试更方便，功能更加强大
 
-[说明文档](www.baidu.com)
+[说明文档](https://github.com/xyzsangxuan/UnityFrameTools/blob/main/Assets/CommonTools/EasyMessage/README.md)
 ### 3、输入系统
 优化当前输入方式、以及根据不同输入方式进行切换的系统。
 Unity新的输入系统已经完善，这部分考虑切换为Unity自带的输入系统。移动端和PC端按照需求设计输入系统
@@ -39,21 +39,24 @@ Res文件夹复制到新项目即可
 ### 6、存档管理工具
 进行本地存档和读档
 Tools下Save文件夹
-[说明文档](www.baidu.com)
+
+[说明文档](https://github.com/xyzsangxuan/UnityFrameTools/blob/main/Assets/CommonTools/Save/README.md)
 ### 7、场景管理工具
 便于管理场景，进行场景切换和加载
 
 Tools/Scenes文件夹，使用看代码
 ### 8、UI模块
 使用更加合理的方式管理的UI的加载、关闭以及层级等
+
+将Tools/UI文件夹复制到新项目，使用时，将UI继承自UIBase，使用UIMgr进行相关操作。
 ### 9、实机Debug工具
-### Mono工具
-Tools下Mono文件夹，使用方法看代码。
 #### 使用
 直接将Tools文件夹下的DebugConsole文件夹和SingleTon文件夹复制到新项目中即可使用
 ```
 调用下面方法即可使用
 DebugConsole.StartDebugConsole(false);
+### Mono工具
+Tools下Mono文件夹，使用方法看代码。
 ```
 ## 二、主要模块
 
@@ -110,37 +113,52 @@ public class SkillTable : ConfigTable<SkillDatabase,SkillTable>
 var tableData = SkillTable.GetInstance()[skillId];
 ```
 PS.在csv表格打开时，运行game会报错，这是因为在编辑器模式下我们直接读取的表格，并不是直接读取生成的二进制文件文件。
+####  表格工具二
 
+[参考文档](https://github.com/xyzsangxuan/UnityFrameTools/blob/main/Assets/CommonTools/ReadExcelForUnity/README.md)
 ### 缓存池工具
 当需要频繁生成大量的物体譬如子弹时进行内存和CPU的资源节省
 
 Tools下Pool文件夹，使用方式看代码
-### 静态变量管理工具
-统一管理使用的静态变量
 
-### 编辑器工具
-场景快速切换，作弊工具，地图编辑器等。
-### 时间线工具
-方便配置某个时间节点做某事的逻辑。
-### 定时器工具
-一定程度上减少Update的使用，同时便利的在无法使用Update和协程时进行定时任务
-### 本地化工具
-方便在不同地区进行本地化处理
+
 ### FSM状态机工具
+Tools/FSM文件夹下
 ### 对话系统
+Tools/DialogSystem文件夹
+
 ### 虚拟摇杆工具
+#### JoystickPack
+动态位置可隐藏摇杆
+
+固定位置摇杆
+
+浮动摇杆
+
+可切换模式摇杆（三种之间切换）
 ### 服务器客户端管理工具
 用于管理资源载入、资源热更新、脚本热更新、用户数据流等
 ### 交互管理模块
 使用统一的方式管理场景内物体的交互
-### 函数扩展
-获取子物体、删除子物体、按钮动效等
+
 ### 数据库解决方案
 ### 寻路工具
 ### 大数工具
 ### 地图编辑器
-
-
+### 本地化工具
+方便在不同地区进行本地化处理
+### 静态变量管理工具
+统一管理使用的静态变量
+### 编辑器工具
+场景快速切换，作弊工具，地图编辑器等。
+### 其他常用工具
+Tools/Utils&Externs文件夹下。
+* 随机数工具
+* 时间线工具
+* 定时器
+* UI相关
+* 扩展函数，获取子物体、删除子物体、按钮动效等
+* Utils常用功能，包括获取距离，获取纯字符等
 ## 三、需要常备的插件工具
 ### 1、DoTween
 更方便的处理UI动画和一些简单的动画。

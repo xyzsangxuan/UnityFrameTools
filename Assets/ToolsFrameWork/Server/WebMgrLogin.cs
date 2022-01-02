@@ -46,8 +46,8 @@ public class WebMgrLogin : Singleton<WebMgrLogin> {
             {
                 Debug.Log("登陆成功");
                 ScenesMgr.GetInstance().LoadSceneAsyn("Lobby", callback);
-                UIManager.GetInstance().HidePanel(PathCfg.PREFAB_PANEL_LOGIN);
-                UIManager.GetInstance().ShowPanel<MessagePanel>(PathCfg.PREFAB_PANEL_MESSAGE, E_UI_Layer.Mid, ShowMessage);
+                UIMgr.GetInstance().HidePanel(PathCfg.PREFAB_PANEL_LOGIN);
+                UIMgr.GetInstance().ShowPanel<MessagePanel>(PathCfg.PREFAB_PANEL_MESSAGE, E_UI_Layer.Mid, ShowMessage);
             }
             else
             {

@@ -34,6 +34,6 @@ public class MessagePanel : BasePanel
 
     public void MessageClose()
     {
-        UIManager.GetInstance().HidePanel(PathCfg.PREFAB_PANEL_MESSAGE);
+        UIMgr.GetInstance().HidePanel(PathCfg.PREFAB_PANEL_MESSAGE);
     }
 }

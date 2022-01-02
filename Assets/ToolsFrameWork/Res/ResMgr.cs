@@ -31,6 +31,15 @@ public class ResMgr : Singleton<ResMgr>
         else//TestAssset AudioClip
             return res;
     }
+    /// <summary>
+    /// 不设置父对象
+    /// </summary>
+    /// <param name="resPath"></param>
+    /// <returns></returns>
+    public GameObject Load(string resPath)
+    {
+        return GameObject.Instantiate(Load<GameObject>(resPath));
+    }
     //异步加载资源
     public void LoadAsync<T>(string name,UnityAction<T> callback) where T:Object
     {
