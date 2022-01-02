@@ -75,7 +75,7 @@ DebugConsole.StartDebugConsole(false);
 
 第二行是变量名称
 
-第三行是具体数据
+第三行开始是具体数据
 
 * 3: 新建对应实体
 ```
