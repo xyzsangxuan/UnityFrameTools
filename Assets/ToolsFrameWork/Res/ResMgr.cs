@@ -22,7 +22,15 @@ public class ResMgr : Singleton<ResMgr>
         else//TestAssset AudioClip
             return res;
     }
-    
+    public T Load<T>(string name, Transform _parent) where T : Object
+    {
+        T res = Resources.Load<T>(name);
+        //如果对象是一个GameObject类型 把它实例化后 再返回出去 外部直接使用即可
+        if (res is GameObject)
+            return GameObject.Instantiate(res, _parent);
+        else//TestAssset AudioClip
+            return res;
+    }
     //异步加载资源
     public void LoadAsync<T>(string name,UnityAction<T> callback) where T:Object
     {

@@ -40,8 +40,8 @@ public class ConfigTable<TDatabase,T>: Singleton<T>
         //发布之后读Resources/Config
         //读表
         //Config/NpcTable.csv(.bytes)
-        //var table = Resources.Load<TextAsset>(tablePath);
-        var table = ResourcesManager.instance.GetResources<TextAsset>(tablePath);
+        var table = Resources.Load<TextAsset>(tablePath);
+        //var table = ResourcesManager.instance.GetResources<TextAsset>(tablePath);
         //内存流
         tableStream = new MemoryStream(table.bytes);
 #endif

@@ -1,7 +1,6 @@
 ﻿public static class PathCfg 
 {
     //---------------------------实例化的物体名称--------------------
-    public static string OBJECT_MADE_BY_MUSICMGR_FOR_BGM = "BkMusic";
 
     public static string OBJECT_MONOCONTROLLER = "MonoController";
 
@@ -13,9 +12,6 @@
     public static string FILE_LOGIN_SAVE_DATA = "login.bat";
 
     //---------------------------资源文件路径--------------
-    public static string PATH_BGM = "Music/BK/";
-
-    public static string PATH_MUSIC_SOUND = "Music/Sound/";
 
     public static string PATH_UI = "UI/";
 

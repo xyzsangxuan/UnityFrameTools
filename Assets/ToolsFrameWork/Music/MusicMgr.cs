@@ -23,7 +23,7 @@ public class MusicMgr : Singleton<MusicMgr>
 
     void Update()
     {
-        for (int i = soundList.Count - 1;i>= 0; i--)
+        for (int i = soundList.Count - 1; i >= 0; i--)
         {
             if (!soundList[i].isPlaying)
             {
@@ -39,13 +39,13 @@ public class MusicMgr : Singleton<MusicMgr>
     /// <param name="name"></param>
     public void PlayBMusic(string name)
     {
-        if(bkMusic == null)
+        if (bkMusic == null)
         {
-            GameObject obj = new GameObject(PathCfg.OBJECT_MADE_BY_MUSICMGR_FOR_BGM);
+            GameObject obj = new GameObject(MusicResPathCfg.OBJECT_MADE_BY_MUSICMGR_FOR_BGM);
             bkMusic = obj.AddComponent<AudioSource>();
         }
         //异步加载背景音乐、加载完成后播放
-        ResMgr.GetInstance().LoadAsync<AudioClip>(PathCfg.PATH_BGM+name,(clip)=> {
+        ResMgr.GetInstance().LoadAsync<AudioClip>(MusicResPathCfg.PATH_BGM + name, (clip) => {
             bkMusic.clip = clip;
             bkMusic.loop = true;
             bkMusic.volume = bkValue;
@@ -90,15 +90,15 @@ public class MusicMgr : Singleton<MusicMgr>
     /// 播放音效
     /// </summary>
     /// <param name="name"></param>
-    public void PlaySound(string name,bool isloop = false,UnityAction<AudioSource> callback = null )
+    public void PlaySound(string name, bool isloop = false, UnityAction<AudioSource> callback = null)
     {
-        if(soundObj == null)
+        if (soundObj == null)
         {
             soundObj = new GameObject("Sound");
         }
-      
+
         //当音效资源异步加载结束后，再添加一个音效
-        ResMgr.GetInstance().LoadAsync<AudioClip>(PathCfg.PATH_MUSIC_SOUND + name, (clip) => {
+        ResMgr.GetInstance().LoadAsync<AudioClip>(MusicResPathCfg.PATH_MUSIC_SOUND + name, (clip) => {
             AudioSource source = soundObj.AddComponent<AudioSource>();
             source.clip = clip;
             source.loop = isloop;
@@ -133,4 +133,16 @@ public class MusicMgr : Singleton<MusicMgr>
             GameObject.Destroy(source);
         }
     }
+
+
+
+}
+public static class MusicResPathCfg
+{
+    //---------------------------实例化的物体名称--------------------
+    public static string OBJECT_MADE_BY_MUSICMGR_FOR_BGM = "BkMusic";
+    //---------------------------资源文件路径--------------
+    public static string PATH_BGM = "Music/BK/";
+
+    public static string PATH_MUSIC_SOUND = "Music/Sound/";
 }
