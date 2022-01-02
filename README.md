@@ -171,9 +171,16 @@ Tools/Utils&Externs文件夹下。
 ### 2、odin
 极其强大的编辑器工具
 
-接下来的工作：从RPG框架中把技能模块抽离出来；把服务器和客户端模块抽离出来
+接下来的工作：
+
+从RPG框架中把技能模块抽离出来；
+
+把服务器和客户端模块抽离出来
 
 完整版请看我参考的框架：
+
 https://github.com/xyzsangxuan/RPGFramework
+
 https://github.com/xyzsangxuan/UnityFramework
+
 https://github.com/brkdyh/CommonFramework
